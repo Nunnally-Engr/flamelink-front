@@ -7,7 +7,8 @@ module.exports = async function apiModule(moduleOptions) {
     console.log(process.env.FLAMELINK_WEBHOOK)
     
     // データ取得
-    const json = await axios.get(this.options.env.FLAMELINK_WEBHOOK)
+    // const json = await axios.get(this.options.env.FLAMELINK_WEBHOOK)
+    const json = await axios.get('https://us-central1-flamelinkblog-2b9f9.cloudfunctions.net/selectMyblog/')
 
     console.log('=== json ===')
     console.log(json.data.myblogList)
