@@ -76,5 +76,8 @@ module.exports = {
         })
       }
     }
+  },
+  env: {
+    FLAMELINK_WEBHOOK: process.env.FLAMELINK_WEBHOOK
   }
 }

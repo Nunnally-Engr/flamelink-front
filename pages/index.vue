@@ -28,11 +28,11 @@ export default {
     try {
       
       // TODO: 
-      const data = require('~/.nuxt/dist/client/blog.json')
-      if (data) {
-        console.log('ブログのデータあるよ♪')
-        console.log(data)
-      }
+      // const data = require('~/.nuxt/dist/client/blog.json')
+      // if (data) {
+      //   console.log('ブログのデータあるよ♪')
+      //   console.log(data)
+      // }
 
       const myblogs = await app.flamelink.content.get('myblog', {
         populate: ['image']
