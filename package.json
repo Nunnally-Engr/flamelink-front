@@ -1,25 +1,37 @@
 {
-  "name": "flamelink-front",
+  "name": "NunnallyBlog",
   "version": "1.0.0",
-  "description": "My mathematical Nuxt.js project",
+  "description": "My flawless Nuxt.js project",
   "author": "Nunnally",
   "private": true,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint",
+    "lint-fix": "node_modules/.bin/eslint --fix"
   },
   "dependencies": {
     "cross-env": "^5.2.0",
-    "nuxt": "^2.3.4",
-    "vuetify": "^1.3.14",
-    "vuetify-loader": "^1.0.8"
+    "@nuxtjs/dotenv": "^1.1.1",
+    "nuxt": "^2.0.0",
+    "vuetify": "^1.4.1",
+    "@nuxtjs/axios": "^5.0.0",
+    "firebase": "^5.7.3",
+    "firebase-admin": "^6.5.0",
+    "flamelink": "^0.19.6",
+    "lodash.get": "^4.4.2"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9",
+    "babel-eslint": "^8.2.1",
+    "eslint": "^5.12.0",
     "eslint-config-prettier": "^3.1.0",
+    "eslint-loader": "^2.0.0",
     "eslint-plugin-prettier": "2.6.2",
+    "eslint-plugin-vue": "^4.0.0",
+    "nodemon": "^1.11.0",
     "prettier": "1.14.3",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2"
