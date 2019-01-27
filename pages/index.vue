@@ -28,17 +28,15 @@ export default {
     try {
       
       // TODO: 
-      // const data = require('~/.nuxt/dist/client/blog.json')
-      // if (data) {
-      //   console.log('ブログのデータあるよ♪')
-      //   console.log(data)
-      // }
+      const myblogs = await require('~/dist/_nuxt/blog.json')
+      if (myblogs) {
+        console.log('ブログのデータあるよ♪')
+        console.log(myblogs)
+      }
 
-      const myblogs = await app.flamelink.content.get('myblog', {
-        populate: ['image']
-      })
       // 降順に並び替えて戻す
       return { myblogs: orderby(myblogs, 'date', false) }
+
     } catch (err) {
       console.log(err)
       return { myblogs: [] }

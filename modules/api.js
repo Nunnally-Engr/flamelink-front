@@ -16,8 +16,6 @@ module.exports = async function apiModule(moduleOptions) {
     this.options.build.plugins.push({
       apply (compiler) {
         compiler.plugin('emit', (compilation, cb) => {
-  
-          // info 変数の内容を用いて `.nuxt/dist/info.txt' を生成する
           // source はバッファとなる
           compilation.assets['blog.json'] = { source: () => JSON.stringify(json.data.myblogList), size: () => 1537 }
           cb()
@@ -37,6 +35,9 @@ module.exports = async function apiModule(moduleOptions) {
 
     // dev時はここで終了
     if (!isStatic) return
+
+    console.log('=== isStatic ===')
+    console.log(isStatic)
 
     // generate時にexpress立ててhttpでjson取得できるようにする
     this.requireModule(['@nuxtjs/axios'])
