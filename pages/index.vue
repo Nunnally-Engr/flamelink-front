@@ -28,7 +28,7 @@ export default {
     try {
       
       // TODO: 
-      const myblogs = await require('~/dist/_nuxt/blog.json')
+      const myblogs = await require(process.env.JSON_PATH)
       if (myblogs) {
         console.log('ブログのデータあるよ♪')
         console.log(myblogs)

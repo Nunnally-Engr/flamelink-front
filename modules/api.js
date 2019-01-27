@@ -22,34 +22,5 @@ module.exports = async function apiModule(moduleOptions) {
         })
       }
     })
-    
-    // TODO: プリフェッチを設定
-    // console.log('**[generate]** add prefetch link')
-    // this.options.head.link = [
-    //   ...this.options.head.link,
-    //   ...refsPath.map(path => ({
-    //     rel: 'prefetch',
-    //     href: `${this.options.build.publicPath}${path}`
-    //   }))
-    // ]
-
-    // dev時はここで終了
-    if (!isStatic) return
-
-    console.log('=== isStatic ===')
-    console.log(isStatic)
-
-    // generate時にexpress立ててhttpでjson取得できるようにする
-    this.requireModule(['@nuxtjs/axios'])
-    this.nuxt.hook('build:done', generator => {
-      console.log('**[generate]** opening server connection')
-      const app = express()
-      app.use(express.static(this.options.generate.dir))
-      console.log(process.env.PORT)
-      this.nuxt.hook('generate:done', () => {
-        console.log('**[generate]** closing server connection')
-        server.close()
-      })
-    })
   })
 }
