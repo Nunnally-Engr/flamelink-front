@@ -23,6 +23,7 @@
     "lodash.get": "^4.4.2",
     "moment": "^2.24.0",
     "nuxt": "^2.0.0",
+    "nuxt-netlify-http2-server-push": "^0.1.2",
     "vuetify": "^1.4.1"
   },
   "devDependencies": {
