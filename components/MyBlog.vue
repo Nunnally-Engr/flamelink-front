@@ -24,8 +24,7 @@ export default {
   data() {
     return {}
   },
-  created() {
-  },
+  created() {},
   methods: {
     detail: function(item) {
       // TODO: 日付フォーマット
